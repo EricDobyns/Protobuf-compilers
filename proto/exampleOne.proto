@@ -1,0 +1,18 @@
+// Copyright 2020 Eric Dobyns
+
+syntax = "proto3";
+
+import "exampleTwo.proto";
+
+option go_package = ".;Example";
+option java_multiple_files = true;
+option java_package = "com.example.example";
+option java_outer_classname = "example";
+option objc_class_prefix = "EX";
+
+package ExampleOne;
+
+message SomeMessage {
+	string foo = 1;
+	ExampleTwo.SomeOtherMessage bar = 2;
+}
